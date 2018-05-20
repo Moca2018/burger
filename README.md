@@ -1,5 +1,4 @@
-# burgerGoodVersion
-burgerGoodVersion
+# burger
 
 
 # Node Express Handlebars
@@ -8,9 +7,18 @@ burgerGoodVersion
 
 In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
 
+
+===========================MVC model view controller DESGIN PATTERN ???????(LINE 9)
+
+
 ### Important
 
 Be sure to utilize the [MYSQL Heroku Deployment Guide](../Supplemental/MySQLHerokuDeploymentProcess.pdf) in order to deploy your assignment.
+
+
+===========================MYSQL HEROKU DEPLOYMENT GUIDE ???????(LINE 17)
+
+
 
 ### Before You Begin
 
@@ -24,9 +32,18 @@ Be sure to utilize the [MYSQL Heroku Deployment Guide](../Supplemental/MySQLHero
 
 * [Check out this video of the app for a run-through of how it works](burger_demo.mp4).
 
+
+
+===========================DEMO ???????(LINE 34)
+
 ### Submission on BCS
 
 * Please submit both the deployed Github.io link to your homework AND the link to the Github Repository!
+
+
+
+===========================GITHUB.IO ???????(LINE 42)
+
 
 ## Instructions
 
@@ -134,7 +151,7 @@ Be sure to utilize the [MYSQL Heroku Deployment Guide](../Supplemental/MySQLHero
 
    * Create the `layouts` directory inside `views` directory.
 
-     * Create the `main.handlebars` file inside `layouts` directory.
+     * Create the `main.handlebars` file inside `layouts` directory. /// NOW
 
      * Setup the `main.handlebars` file so it's able to be used by Handlebars.
 
@@ -171,8 +188,8 @@ All the recommended files and directories from the steps above should look like 
 │   │   ├── css
 │   │   │   └── burger_style.css
 │   │   └── img
-│   │       └── burger.png
-│   └── test.html
+│   │       └── burger.png   ===============================???????
+│   └── test.html ==========================================???????
 │
 ├── server.js
 │
@@ -182,11 +199,18 @@ All the recommended files and directories from the steps above should look like 
         └── main.handlebars
 ```
 
-### Reminder: Submission on BCS
+### Reminder: Submission on BCS ============================??????
 
 * Please submit both the deployed Github.io link to your homework AND the link to the Github Repository!
 
 - - -
+
+
+RUN THIS IN LOCAL HOST?????===============????????
+CONSOLE LOGS ====================???????
+
+
+
 
 ### Minimum Requirements
 

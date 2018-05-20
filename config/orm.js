@@ -1,3 +1,10 @@
+
+// this is the code where we make it talk (node and mysql - because they are diff. languages)
+//we are using sequelized
+
+
+//====================CONNECTION
+
 var connection = require("../config/connection.js");
 
 var orm = {
@@ -9,6 +16,10 @@ var orm = {
      cb (result);
     });
   },
+
+
+//====================INSERT ONE
+
   insertOne: function(tableInput, colToSearch, valOfCol, cb) {
     var queryString = "INSERT INTO burgers(burger_name, devoured) VALUES (?,?)";
 
@@ -18,6 +29,7 @@ var orm = {
     });
   },
 
+  //NEED to invoque "insertOne".....? /when i pass into valofcol / NEEDS to be a STRING (using two sting methods. )
   //NOte: i might run into an issue here..because line 15 (val of col 0... it needs to be a string)
   //i migh need to convert into a string method (tostring()) //valOfCol[0].toString();
   // change he querystring... it needs to be a updated statement / instead of 2:06pm
@@ -25,22 +37,18 @@ var orm = {
   // https://www.w3schools.com/sql/sql_update.asp
   //the num of questions marks / with the value that is in the array... for the connection query
 
-
+//====================UPDATE ONE
+ 
   updateOne: function(tableInput, colToSearch, valOfCol, cb) {
-    var queryString = "UPDATE burgers SET devoured = 1 WHERE id = ?";
+    var queryString = "UPDATE burgers SET burger_name = 1, devoured = 2, WHERE id = ?";
 
     connection.query(queryString, [tableInput], function(err, result) {
       if (err) throw err;
       return result;
     });
   }
-
-  
 };
 
 module.exports = orm;
 console.log(module.exports);
 
-// this is the code where we make it talk (node and mysql - because they are diff. languages)
-//we are using sequelized
-//orm 
