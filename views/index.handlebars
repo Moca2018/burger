@@ -1,36 +1,36 @@
 
-{{!--BEGINING OF JUMBOTRON --}}
+{{!--=====================================================BEGINING OF JUMBOTRON --}}
 
-  <div class="container">
-    <div class="jumbotron">
-      <center>
+<div class="container">
+  <div class="jumbotron">
+    <center>
       <h1>Eat-Da-Burger Restaurant</h1>      
       <p>Come and get the Most Amazing Burgers Here!</p>
-      </center>
-    </div>
+    </center>
+</div>
 
-  </div>
+</div>
 
 <style>
-.jumbotron {
-    padding: .2em .2em;
-    h1 {
-        font-size: 10em;
-    }
-    p {
-        font-size: 1.2em;
-        .btn {
+    .jumbotron {
+      padding: .2em .2em;
+        h1 {
+            font-size: 10em;
+          }
+        p {
+          font-size: 1.2em;
+            .btn {
             padding: 0.5em;
+            }
+          }
         }
-    }
-}
 </style>
 
 
-{{!--END OF JUMBOTRON --}}
+{{!--=============================================================END OF JUMBOTRON --}}
 
 
-{{!-- BEGINING OF CARROUSEL CONTAINER --}}
+{{!--============================================================ BEGINING OF CARROUSEL CONTAINER --}}
 <div class="container">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -42,18 +42,16 @@
       <li data-target="#myCarousel" data-slide-to="5" class="active"></li>
     </ol>
 
-
-
     <!-- BEGINING OF Wrapper for slides -->
 
     <div class="carousel-inner">
 
       <div class="item active">
-        <img src="assets/img/restaurant2.jpg" alt="Classic Burguer" style="width:1140px; height:620px; ">
+        <img src="assets/img/restaurant2.jpg" alt="Classic Burger" style="width:1140px; height:620px; ">
       </div>
 
       <div class="item">
-        <img src="assets/img/burger1.jpg" alt="Extreme Burguer" style="width:1200px; height: 620px;">
+        <img src="assets/img/burger1.jpg" alt="Extreme Burger" style="width:1200px; height: 620px;">
       </div>
     
       <div class="item">
@@ -73,8 +71,6 @@
 
     <!-- END OF Wrapper for slides -->
 
-
-
     <!-- Left control -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
@@ -89,88 +85,59 @@
   </div>
 </div>
 
-{{!-- END OF CARROUSEL CONTAINER --}}
+{{!--================================================================ END OF CARROUSEL CONTAINER --}}
+{{!--================================================================ END OF CARROUSEL CONTAINER --}}
+{{!--================================================================ END OF CARROUSEL CONTAINER --}}
+{{!--======================================== BEGINING OF THE FORMS =============================--}}
+
+
+<div class="container">
 
 
 
-{{!--======================================== BEGINING OF THE FORMS ==============================--}}
+<h2>BURGERS that are not DEVOURED!</h2>
 
-  <div class="container">
-    <h1>Customize your Burger</h1>
-
-      <div class="row">
-        
-            <ul>
-              {{#each burgers}}
-                {{#unless devoured}}
-                  {{> burgers/burger-block devoured=true}}
-                {{/unless}}
-              {{/each}}
-            </ul>
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
 
 
-            <ul>
-              {{#each burgers}}
-                {{#if devoured}}
-                  {{> burgers/burger-block devoured=false}}
-                {{/if}}
-              {{/each}}
-            </ul>
+<h2>Burgers that are Devoured!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/if}}
+  {{/each}}
+</ul>
 
 
-        <h2>Add a burger</h2>
-        <form class="create-form">
 
-          <div class="form-group">
-            <label for="ca" burger_name:</label>
-            <input type="text" id="ca" name="name">
-          </div>
+<h2>Add Burgers</h2>
+<form class="create-form">
 
-          <button type="submit">Add burger</button>
-        </form>
-
-        {{!-- <div class="col-sm-6">
-          <h2>Burgers to Eat!</h2>
-
-          {{#each burgers}}
-            {{#unless this.devoured}}
-              <form id="new" action="/burgers/devour/{{this.id}}?_method=PUT" method="POST">
-                <input type="hidden" name="devoured" value="true">
-                <button class="btn btn-danger" type="submit">Devour it!</button>
-              </form>
-              <div class="finished">
-                {{this.id}}. {{this.burger_name}}
-              </div>
-            {{/unless}}
-          {{/each}}
-        </div>
-
-        <div class="col-sm-6">
-          <h2>Burgers Devoured!</h2>
-          {{#each burgers}}
-            {{#if this.devoured}}
-              <div class="finished devoured">
-                {{this.id}}. {{this.burger_name}}
-              </div>
-            {{/if}}
-          {{/each}}
-          </div>
-
- --}}
+  <div class="form-group">
+    <label for="ca">burgers_name:</label>
+    <input type="text" id="ca" name="name">
   </div>
 
-  <h2>Enter a burger you want to eat then click "Submit"</h2>
-  
-  <form id="additional" action="api/burgers/add" method="POST">
-    <textarea name="burger_name"></textarea>
-    <button class="btn btn-warning" type="submit">Submit</button>
-  </form>
+  <div class="form-group">
+    <label for="devoured">Devoured?</label><br>
+    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    <input type="radio" name="devoured" value="0"> Awake
+  </div>
+
+  <button type="submit">Add Burgers</button>
+</form> 
 
 
+{{!-- End of Container --}}
 </div>
-
-
-{{!-- END OF THE FORMS --}}
 
 
 
