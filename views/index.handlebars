@@ -98,8 +98,9 @@
 <h2>BURGERS that are not DEVOURED!</h2>
 
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
     {{#unless devoured}}
+    
       {{> burgers/burger-block devoured=true}}
     {{/unless}}
   {{/each}}
@@ -109,7 +110,7 @@
 <h2>Burgers that are Devoured!</h2>
 
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
     {{#if devoured}}
       {{> burgers/burger-block devoured=false}}
     {{/if}}
@@ -119,11 +120,12 @@
 
 
 <h2>Add Burgers</h2>
-<form class="create-form">
+
+<form class="create-form" action="api/burgers/add" method="POST">
 
   <div class="form-group">
     <label for="ca">burgers_name:</label>
-    <input type="text" id="ca" name="name">
+    <input type="text" id="ca" name="burger_name">
   </div>
 
   <div class="form-group">
@@ -132,7 +134,8 @@
     <input type="radio" name="devoured" value="0"> Awake
   </div>
 
-  <button type="submit">Add Burgers</button>
+  <button type="submit" id="addBurger">Add Burgers</button>
+
 </form> 
 
 

@@ -22,6 +22,7 @@ var orm = {
 
   insertOne: function(tableInput, colToSearch, valOfCol, cb) {
     var queryString = "INSERT INTO burgers(burger_name, devoured) VALUES (?,?)";
+console.log(valOfCol);
 
     connection.query(queryString, [valOfCol[0], valOfCol[1]], function(err, result) {
       if (err) {throw err};
